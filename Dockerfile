@@ -9,6 +9,7 @@ COPY prisma ./prisma
 COPY src ./src
 
 RUN npx prisma generate
+RUN npx prisma migrate dev
 
 EXPOSE 3000
 CMD ["npm", "run", "dev"]

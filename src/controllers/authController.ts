@@ -110,7 +110,7 @@ export const refresh = async (
   try {
     const payload = verifyRefresh(refreshToken);
     const accessToken = signAccessToken({
-      userId: payload.id,
+      userId: payload.userId || payload.id,
       email: payload.email,
       name: payload.name,
     });
